@@ -20,4 +20,4 @@ useRef:
 ----------
 - Can set focus, change style, change value, change inner text (UseRefExample1.jsx)
 - Can get previous input value  (UseRefExample2.jsx)
-- Prevent memory leak on when the component make a api call, but the component is unmounted before the api comes back  (UseRefExample3.jsx)
+- Prevent memory leak on when the component make a api call, but the component is unmounted before the api comes back  (UseRefExample3.jsx, Todo.jsx) -- Keep in mind this only happens in react 17.
