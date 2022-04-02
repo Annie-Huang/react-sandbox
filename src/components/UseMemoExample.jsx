@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const getSqrt = (n) => {
   for (let i = 0; i <= 10000; i++) {
@@ -13,7 +13,9 @@ const UseMemoExample = () => {
   const [inc, setInc] = useState(0);
 
   // Create the expensive function
-  const sqrt = getSqrt(number);
+  // const sqrt = getSqrt(number);
+  // Add useMemo so clicking on 'Re Render' button will not trigger getSqrt to run as 'number' state is not changing by the click.
+  const sqrt = useMemo(() => getSqrt(number), [number]);
 
   const renders = useRef(1);
 

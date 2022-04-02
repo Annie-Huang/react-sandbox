@@ -25,3 +25,4 @@ useRef:
 
 useMemo:
 ----------
+- Can only trigger certain function to run if the dependence list item value has changed.
