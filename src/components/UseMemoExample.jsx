@@ -1,11 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 
+const getSqrt = (n) => {
+  for (let i = 0; i <= 10000; i++) {
+    console.log(i);
+  }
+  console.log('Expensive Function Called!');
+  return Math.sqrt(n);
+};
+
 const UseMemoExample = () => {
   const [number, setNumber] = useState(1);
   const [inc, setInc] = useState(0);
 
   // Create the expensive function
-  // const sqrt = getSqrt(number);
+  const sqrt = getSqrt(number);
 
   const renders = useRef(1);
 
@@ -29,7 +37,9 @@ const UseMemoExample = () => {
         className='form-control w-25'
       />
 
-      <h2 className='my-3'>{/*The sqrt of {number} is {sqrt}*/}</h2>
+      <h2 className='my-3'>
+        The sqrt of {number} is {sqrt}
+      </h2>
 
       <button onClick={onClick} className='btn btn-primary'>
         Re Render
