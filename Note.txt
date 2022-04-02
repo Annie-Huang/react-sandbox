@@ -25,4 +25,10 @@ useRef:
 
 useMemo:
 ----------
-- Can only trigger certain function to run if the dependence list item value has changed.
+- Can only trigger certain function to run if the dependence list item value has changed. It returns a memorise value
+
+
+useCallback:
+-----------------
+- Can memorise the entire function and only return when function has changed. It returns a memorise callback function
+- It's essentially a HOC, a component that take a component as a prop, and prevents the re-rendering if the props or the value within it haven't changed, so we can essentially memorize a whole react component.
