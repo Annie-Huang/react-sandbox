@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 const UseCallbackExample = () => {
   const [tasks, setTasks] = useState([]);
 
-  const addTask = () => {
+  // Notice after adding useCallback, the <Button> component stop re-rendering
+  // Memorize the function (addTask) so if the dependent list never change (e.g. setTasks), then the function never change, which prevents the component uses this function to change.
+  const addTask = useCallback(() => {
     setTasks((prevState) => [...prevState, 'Some Task']);
-  };
+  }, [setTasks]);
 
   return (
     <div>
@@ -17,7 +19,7 @@ const UseCallbackExample = () => {
   );
 };
 
-const Button = ({ addTask }) => {
+/*const Button = ({ addTask }) => {
   console.log('Button rendered');
   return (
     <div>
@@ -26,5 +28,17 @@ const Button = ({ addTask }) => {
       </button>
     </div>
   );
-};
+};*/
+
+const Button = React.memo(({ addTask }) => {
+  console.log('Button rendered');
+  return (
+    <div>
+      <button className='btn btn-primary' onClick={addTask}>
+        Add Task
+      </button>
+    </div>
+  );
+});
+
 export default UseCallbackExample;

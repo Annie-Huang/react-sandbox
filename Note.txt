@@ -31,4 +31,5 @@ useMemo:
 useCallback:
 -----------------
 - Can memorise the entire function and only return when function has changed. It returns a memorise callback function
+- In another word: memorize the function (addTask) so if the dependent list never change (e.g. setTasks), then the function never change, which prevents the component uses this function to change.
 - It's essentially a HOC, a component that take a component as a prop, and prevents the re-rendering if the props or the value within it haven't changed, so we can essentially memorize a whole react component.
