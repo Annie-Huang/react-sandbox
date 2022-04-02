@@ -14,3 +14,9 @@ Part 2 is at C:\react\github-finder
 =============================================================================
 
 PS C:\react> npx create-react-app react-sandbox --use-npm
+
+
+useRef:
+----------
+- Can set focus, change style, change value, change inner text (UseRefExample1.jsx)
+- Can get previous input value
