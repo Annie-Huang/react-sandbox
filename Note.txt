@@ -41,5 +41,6 @@ useFetch:
 
 useLocalStorage:
 ----------------------
-- Custom hook to set local state as well as set local storage. const [task, setTask] = useLocalStorage('task', '');
+- Custom hook to set local state as well as set local storage.
+- const [task, setTask] = useLocalStorage('task', ''); const [tasks, setTasks] = useLocalStorage('tasks', []);
   (useLocalStorage.js, CustomHookExample2.jsx)
